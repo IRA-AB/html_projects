@@ -1,0 +1,260 @@
+body{
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    height: 15%;
+    width: 100%;
+    background-color: #2a2a2a;
+    position: relative;
+    margin-top: 2.5%;
+    align-items: center;
+    opacity: 0.8;
+    z-index: 1;
+}
+.navcon{
+    height: 10vh;
+    width: 60%;
+    justify-items: center;
+    display: flex;
+    position: absolute;
+    right: 100px;
+    align-items: center;
+    gap: 5%;
+    bottom: 20px;
+}
+#anav{
+    color: #878787;
+    text-decoration-line: underline;
+    text-decoration-thickness:20%;
+    text-underline-offset: 20%;
+}
+#navcont{
+    list-style-type: none;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+.logo{
+    height: 80%;
+    width: 15%;    
+    position: absolute;
+    align-content: center;
+    background-color: rgb(214, 214, 214);
+    text-align: center;
+    margin-left: 7%;
+    font-size: 1vw;
+}
+.cont1{
+    top: -10px;
+    background-color: #bbbbbb;
+    height: 55%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    translate: 0%  -34.25%;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+.largescreen{
+    background-color: #878787;
+    height: 55vh;
+    width: 90vw;
+    z-index: -1;
+    translate: -50% 0%;
+    position: absolute;
+    top:0px;
+    left:50%;
+    align-content: center;
+}
+.promo{
+    height: 20vh;
+    width: 30vw;
+    background-color: #CCCCCC;
+    position: absolute;
+    text-align: center;
+    align-content: center;
+    margin-left: 2%;
+    bottom: 25%;
+    font-size: 1vw;
+}
+#arrow{
+    height: 30px;
+    width: 30px;
+    border-top: 14px solid rgb(160, 155, 155);
+    border-left: 14px solid rgb(160, 155, 155);
+    transform: rotate(45deg);
+    margin: 30px;
+}
+.right{
+    rotate: 90deg;
+}
+.left{
+    rotate: -90deg;
+}
+#txt1{
+    text-align: end;
+    padding-right: 25%;
+    font-size: 1.5vw;
+}
+.cont2{
+    background-color: #ebebeb;
+    height: 50%;
+    width: 90vw;
+    position:relative;
+    translate: -50% -40.5%;
+    z-index: 1;
+    left:50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card{
+
+    height: 100%;
+    width: 80vw;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.ats{
+    background-color: #CCCCCC;
+    width: 100%;
+    height: 30%;
+}
+#ctxt{
+    color:#2a2a2a;
+    text-align: justify;
+    font-size: 1vw;
+}
+h1{
+    font-size: 2.3vw;
+    color: #878787;
+}
+a{
+    color: black;
+}
+.smolcont{
+    position: relative;
+    justify-content: center;
+    gap: 5px;
+    height: 30%;
+    display: flex;
+}
+.smol{
+    background-color: #CCCCCC;
+    height: 100%;
+    width: 40%;
+    flex-direction: row;
+}
+#ctxt2{
+    color: #2a2a2a;
+    text-align: justify;
+    font-size: 1vw;
+}
+.smolarr{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-top: 5px solid rgb(160, 155, 155);
+    border-left: 5px solid rgb(160, 155, 155);
+    transform: rotate(45deg);
+}   
+#sright{
+    right: -5%;
+    rotate: 90deg;
+    align-self: center;
+}
+#sleft{
+    left: -5%;
+    rotate: -90deg;
+    align-self: center;
+}
+tr,td,th,table{
+    font-size: 1vw;
+    border-collapse: collapse;
+    padding: 8px;
+    padding-left: 18px;
+    color: #2a2a2a;
+}
+tr{
+    border: 1px solid #fefefe;
+}
+td{
+    background-color: #CCCCCC;
+}
+th{
+    background-color:#c0c0c0;
+    width: 20%;
+    text-align: left;
+}
+.cardnav{
+    color:#2a2a2a;
+    font-size: 1vw;
+}
+.footer{
+    display: flex;
+    height: 15%;
+    width: 90vw;
+    position: absolute;
+    translate: 4.9% -125%;
+    align-content: center;
+    justify-content: center;
+}
+.cfoot{
+    position: relative;
+    background-color: #fefefe;
+    width: 80%;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+    padding-left: 1.5%;
+}
+.cfootcon{
+    align-items: center;
+    display: flex;
+    width: 90%;
+    height: 20%;
+    justify-content: space-evenly;
+    align-self: center;
+}
+.lbutton{
+    align-self: center;
+    background-color: #ebebeb;
+    height: 50%;
+    width: 10%;
+    align-content: center;
+    text-align: center;
+    color: #2a2a2a;
+    font-size: 1vw;
+}
+.rbutton{
+    align-self: center;
+    background-color: #ebebeb;
+    height: 40%;
+    width: 13%;
+    align-content: center;
+    text-align: center;
+    color: #2a2a2a;
+    font-size: 1vw;
+}
+li,li:before{
+    color: #878787;
+    list-style-type: "| ";
+    font-size: 1vw;
+}
+#disney{
+    color: #878787;
+    font-size: 1vw;
+    padding-left: 1% ;
+}
+#cint{
+    color: #878787;
+    text-decoration: none;
+}
+p{
+    color: #2a2a2a;
+}

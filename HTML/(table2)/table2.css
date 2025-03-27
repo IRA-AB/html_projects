@@ -1,0 +1,19 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+td,th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+tr{
+    text-align: center;
+}
+.header{
+    background-color: yellow;
+}
+.name{
+    text-align: left;
+}
+.subjects{
+    background-color: rgb(31, 89, 250);
+}
