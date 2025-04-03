@@ -67,5 +67,23 @@ nav{
 }
 .show2{
 	display: block;
-	transition: 10s ease-in;
+
+}
+.trafficlight{
+	display: none;
+	position: absolute;
+	top: 20%;
+	border: 2px solid black;
+	border-radius: 21px;
+}
+.show3{
+    display: block;
+}
+h1{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5vw;
+    top:80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

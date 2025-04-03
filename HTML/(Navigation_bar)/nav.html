@@ -9,24 +9,27 @@
     <nav>
         <button class="dropbtn">Home</button>
         <div class="dropdown">
+            <!--Dropdowns-->
             <button onclick="dropdown()" class="dropbtn">Activities &#11206;</button>
             <div id="dd" class="dropdown-content">
                 <button onclick="lights()" class="">Lights</button>
-                <button onclick="">Traffic Lights</button>
+                <button onclick="traffic()">Traffic Lights</button>
             </div>
         </div>
         <button class="dropbtn">Articles</button>
         <button class="dropbtn">Inspiration</button>
     </nav>
-
+    <!--IFrames for Lightbulb and Traffic light-->
     <div class="lightbulb" id="lights">
-        <iframe src="bulb/bulb.html" height="300px" width="300px" frameborder="" style="border-radius: 18px;"></iframe>
+        <iframe src="bulb/bulb.html" height="400px" width="400px" frameborder="" style="border-radius: 18px;"></iframe>
     </div>
-    <div>
+    <div class="trafficlight" id="trafficlight">
+        <iframe src="trafficlight/tl.html" height="400px" width="400px" frameborder="" style="border-radius: 18px;"></iframe>
+    </div>
 
-    </div>
-      
+    <h1>By Ira P. Abrigo</h1>      
+
     <script src="nav.js"></script>
-      
+
 </body>
 </html> 
