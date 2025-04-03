@@ -1,0 +1,20 @@
+body{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    transition: all .5s;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+img{
+    position: absolute;
+    width: 100px;
+    height:100px;
+    border-radius: 100px;
+    transition: .5s ease;
+}
+img:hover{
+    transform: scale(2) rotate(360deg);
+}

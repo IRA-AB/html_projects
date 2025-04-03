@@ -1,30 +1,35 @@
 body{
-    display: flex;
-}
-.Header{
-    position: absolute;
-    top: 5%;
-}
-button{
-    height: 50px;
-    width: 150px;
-    border-radius: 12px;
-    background-color: #1b1b1b;
-    color: #ececec;
-    font-size: 1rem;
-}
-button::after{
-    content: "";
-    z-index: -1;
-    position: absolute;
     height: 100%;
     width: 100%;
-    background-color: #333;
-    left:0;
-    top: 0;
-    border-radius: 10px;
+    margin: 0px;
 }
-button::before{
-    content: "";
-    background: linear-gradient(45deg,#bd8a00);
+.header{
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    top: 10%;
+    font-size: 2vw;
+}
+.content{
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    top: 40%;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+button{
+    font-size: 1.5vw;
+    padding: 15px;
+    border-radius: 50px;
+    transition: .5s ease-in;
+    background-color: #ffffff;
+}
+button:hover{
+    background-color: #bebebe;
+
+    transform: translateY(-5px);
 }

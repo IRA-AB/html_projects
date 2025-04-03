@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nav.css">
+    <title>NavBar</title>
+</head>
+<body>
+    <nav>
+        <button class="dropbtn">Home</button>
+        <div class="dropdown">
+            <button onclick="dropdown()" class="dropbtn">Activities &#11206;</button>
+            <div id="dd" class="dropdown-content">
+                <button onclick="lights()" class="">Lights</button>
+                <button onclick="">Traffic Lights</button>
+            </div>
+        </div>
+        <button class="dropbtn">Articles</button>
+        <button class="dropbtn">Inspiration</button>
+    </nav>
+
+    <div class="lightbulb" id="lights">
+        <iframe src="bulb/bulb.html" height="300px" width="300px" frameborder="" style="border-radius: 18px;"></iframe>
+    </div>
+    <div>
+
+    </div>
+      
+    <script src="nav.js"></script>
+      
+</body>
+</html> 
