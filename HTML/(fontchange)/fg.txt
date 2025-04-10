@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fg.css">
+    <title>Font Changing</title>
+</head>
+<body>
+    <div>
+        <h1 id="text">This is a sample text.</h1>
+        <p id="fontname">Name of the font</p>
+        <button onclick="changeFont()">Change font</button>
+    </div>
+
+    <script src="fg.js"></script>
+    
+</body>
+</html>
