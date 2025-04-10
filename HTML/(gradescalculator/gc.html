@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gc.css">
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Gordon College</h1>
+            <p>#Olongapo City Sports Complex, Gordon College,Philippine, Lungsod ng Olongapo, Zambales</p>
+        </div>
+        <form id="Form">
+            <label for="studentName">Name of Student:</label>
+            <input type="text" id="name">
+            <label for="studentNumber">Student Number:</label>
+            <input type="text" id="idnum">
+            <label for="mGrade">Tentative Midterm Grade:</label>
+            <input type="number" id="mGrade">
+            <label for="fGrade">Tentative Final Grade:</label>
+            <input type="number" id="fGrade">
+            <div class="results">
+                <label>FINAL GRADE:</label>
+                <input type="text" id="Output" readonly>
+            </div>
+            <div class="results">
+                <label>REMARKS:</label>
+                <input type="text" id="remarks" readonly>
+            </div>
+            <button type="button" onclick="computeGrade()">Compute</button>
+            <button type="reset">New</button>
+        </form>
+    </div>
+    <script src="gc.js"></script>
+</body>
+</html>
