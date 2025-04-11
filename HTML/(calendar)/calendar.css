@@ -1,0 +1,56 @@
+body{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #ffcd83;
+}
+table,th,tr{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    height: 25px;
+    background-color: #004ca3;
+}
+table{
+    font-size: 1.2rem;
+    justify-self: center;
+}
+tr:nth-child(odd){
+    background-color: #5995da;
+}
+.card{
+    align-content: center;
+    padding: 10px 25px;
+    box-shadow: -2px 39px 88px -47px rgba(0,0,0,0.75);
+    height: 250px;
+    width: 250px;
+    border: 3px solid rgb(29, 29, 29);
+    border-radius: 40px 15px 40px 15px;
+}
+.container{
+    position: absolute;
+    top: 10%;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 40px 60px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.Monthname{
+    color: wheat;
+    background-color: black;
+}
+
+td {
+    cursor: pointer;
+}
+
+td.highlighted {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
