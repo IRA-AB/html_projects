@@ -1,16 +1,26 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="tictactoe.css">
-    <title>Memory Game</title>
 </head>
 <body>
-    <div class="container">
-
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Select Game Mode</h2>
+            <button onclick="startGame('player')">Play vs Player</button>
+            <button onclick="startGame('bot')">Play vs Bot</button>
+        </div>
     </div>
-    <div class="gamename">Memory Game</div>
-    <div id="Reset">Reset</dixv>
-    <div class="Home">Home</div>  
+    <h1>Tic Tac Toe</h1>
+    <div class="game-container">
+        <div id="board">
+        </div>
+        <div id="status"></div>
+        <button id="reset" onclick="resetGame()">Reset Game</button>
+    </div>
+    <script src="tictactoe.js"></script>
 </body>
 </html>
