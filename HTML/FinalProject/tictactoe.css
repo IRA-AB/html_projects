@@ -11,6 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    position: relative;
 }
 
 h1 {
@@ -19,6 +20,8 @@ h1 {
     font-size: 3rem;
     color:  #d3d3d3;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: -1.5%
 }
 
 .mode-selection button {
@@ -38,14 +41,22 @@ h1 {
     background-color: #8a2be2;
 }
 
-.game-container {
-    margin-top: 20px;
+.gamecont {
+    margin-top: 0; /* Remove the top margin */
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    width: 80vw;
-    max-width: 90vw; /* Ensure the container doesn't exceed the viewport width */
+    width: 80vw; /* Set width to 80% of the viewport width */
+    height: 80vh; /* Set height to 80% of the viewport height */
+    max-width: 90vw; /* Ensure it doesn't exceed 90% of the viewport width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Include padding and border in width/height */
+    position: relative;
+    transform: translateY(); /* Fine-tune centering */
 }
 
 #board {
@@ -90,7 +101,9 @@ h1 {
 }
 
 #reset {
-    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px; /* Move to the bottom left */
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
@@ -104,6 +117,45 @@ h1 {
 
 #reset:hover {
     background-color: #ff6347;
+}
+
+#changeMode {
+    position: absolute;
+    bottom: 20px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#changeMode:hover {
+    background-color: #0056b3;
+}
+
+#home {
+    position: absolute;
+    bottom: 20px;
+    right: 20px; /* Move to the bottom right */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#home:hover {
+    background-color: #218838;
 }
 
 .container {
@@ -143,7 +195,7 @@ h1 {
     z-index: 1000;
 }
 
-.popup-content {
+.popupcont {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
@@ -151,12 +203,12 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.popup-content h2 {
+.popupcont h2 {
     margin-bottom: 20px;
     font-size: 24px;
 }
 
-.popup-content button {
+.popupcont button {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
@@ -169,7 +221,7 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-.popup-content button:hover {
+.popupcont button:hover {
     background-color: #8a2be2;
 }
 
@@ -185,15 +237,17 @@ h1 {
         font-size: 24px; /* Reduce font size for smaller screens */
     }
 
-    .game-container {
+    .gamecont {
         padding: 10px;
+        width: 90vw; /* Adjust width for smaller screens */
+        height: 90vh; /* Adjust height for smaller screens */
     }
 
     h1 {
         font-size: 2rem; /* Adjust heading size */
     }
 
-    .popup-content {
+    .popupcont {
         width: 90%; /* Ensure popup fits smaller screens */
     }
 }
@@ -208,8 +262,9 @@ h1 {
         font-size: 18px; /* Further reduce font size for very small screens */
     }
 
-    .game-container {
-        width: 100%; /* Use full width for very small screens */
+    .gamecont {
+        width: 95vw; /* Further adjust width for very small screens */
+        height: 95vh; /* Further adjust height for very small screens */
     }
 
     h1 {
