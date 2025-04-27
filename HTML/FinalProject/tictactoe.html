@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="tictactoe.css">
+    <link rel="icon" type="png" href="tictactoe_logo.png">
 </head>
 <body>
+    <h1>Tic Tac Toe</h1>
+    <div class="gamecont">
+        <div id="board"></div>
+        <div id="status"></div>
+    </div>
+    <button id="changeMode" onclick="changeMode()">Change Mode</button>
+    <button id="reset" onclick="resetGame()">Reset Game</button>
+    <button id="home" onclick="location.href='home.html'">Home</button>
     <div id="popup" class="popup">
-        <div class="popup-content">
+        <div class="popupcont">
             <h2>Select Game Mode</h2>
             <button onclick="startGame('player')">Play vs Player</button>
             <button onclick="startGame('bot')">Play vs Bot</button>
         </div>
-    </div>
-    <h1>Tic Tac Toe</h1>
-    <div class="game-container">
-        <div id="board">
-        </div>
-        <div id="status"></div>
-        <button id="reset" onclick="resetGame()">Reset Game</button>
     </div>
     <script src="tictactoe.js"></script>
 </body>
