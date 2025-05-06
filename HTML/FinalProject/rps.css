@@ -1,0 +1,236 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url(bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+h1 {
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 3rem;
+    color:  #d3d3d3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: -1.5%
+}
+.gamecont {
+    margin-top: 0; /* Remove the top margin */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 80vw; /* Set width to 80% of the viewport width */
+    height: 80vh; /* Set height to 80% of the viewport height */
+    max-width: 90vw; /* Ensure it doesn't exceed 90% of the viewport width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Include padding and border in width/height */
+    position: relative;
+    transform: translateY(); /* Fine-tune centering */
+}
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+.choices button {
+    font-size: 5rem;
+    padding: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    animation: float 2s infinite ease-in-out;
+}
+.choices button:hover {
+    background-color: #f0f8ff;
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.choices button:active {
+    transform: scale(1.1) rotate(-10deg);
+    background-color: #d3d3d3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+#playerDisplay, #computerDisplay, #resultDisplay {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+.scoreDisplay {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+.greenText {
+    color: #28a745;
+    animation: pulse 1s infinite;
+}
+
+.redText {
+    color: #dc3545;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+#reset {
+    position: absolute;
+    bottom: 20px;
+    left: 20px; /* Move to the bottom left */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#reset:hover {
+    background-color: #ff6347;
+}
+#home {
+    position: absolute;
+    bottom: 20px;
+    right: 20px; /* Move to the bottom right */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#home:hover {
+    background-color: #218838;
+}
+
+.container {
+    background-image: linear-gradient(90deg, #AE6CFF, #350158);
+    height: 80%;
+    width: 70%;
+    align-self: center;
+    border-radius: 18px;
+    position: relative;
+    padding: 20px;
+    max-width: 90vw; /* Ensure the container doesn't exceed the viewport width */
+}
+
+.gamename {
+    position: absolute;
+    background: #d3d3d3;
+    top: 3%;
+    font-size: 2vw;
+    padding: 10px 50px;
+    border-radius: 50px;
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #board {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 5px;
+    }
+    .cell {
+        font-size: 24px; /* Reduce font size for smaller screens */
+    }
+    .gamecont {
+        padding: 10px;
+        width: 90vw; /* Adjust width for smaller screens */
+        height: 90vh; /* Adjust height for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    .popupcont {
+        width: 90%; /* Ensure popup fits smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        font-size: 18px; /* Further reduce font size for very small screens */
+    }
+
+    .gamecont {
+        width: 90vw; /* Further adjust width for very small screens */
+        height: 90vh; /* Further adjust height for very small screens */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Further adjust heading size */
+    }
+}
