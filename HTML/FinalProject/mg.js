@@ -10,8 +10,38 @@ const images = [
 const gameContainer = document.querySelector('.memory-game');
 let cards = [...images, ...images]; // Duplicate images for pairs
 
+let flipCount = 0;
+let timerInterval;
+let startTime;
+
+function startTimer() {
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    const currentTime = Date.now();
+    const elapsedTime = Math.floor((currentTime - startTime) / 1000);
+    const minutes = Math.floor(elapsedTime / 60);
+    const seconds = elapsedTime % 60;
+    
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+
+function updateFlipCount() {
+    flipCount++;
+    document.getElementById('flip-count').textContent = flipCount;
+}
+
 function initializeGame() {
-    gameContainer.innerHTML = ''; // Clear the game container
+    gameContainer.innerHTML = '';
+    flipCount = 0;
+    document.getElementById('flip-count').textContent = '0';
+    document.getElementById('minutes').textContent = '00';
+    document.getElementById('seconds').textContent = '00';
+    clearInterval(timerInterval);
+    
     cards.sort(() => 0.5 - Math.random()); // Shuffle cards
 
     cards.forEach(src => {
@@ -33,7 +63,12 @@ let firstCard, secondCard;
 
 function flipCard() {
     if (lockBoard || this === firstCard || this.classList.contains('flip')) return;
-
+    
+    if (flipCount === 0) {
+        startTimer();
+    }
+    
+    updateFlipCount();
     this.classList.add('flip');
 
     if (!hasFlippedCard) {
@@ -75,6 +110,7 @@ function resetBoard() {
 }
 
 function resetGame() {
+    clearInterval(timerInterval);
     hasFlippedCard = false;
     lockBoard = false;
     firstCard = null;

@@ -17,6 +17,8 @@ function resetGame() {
     gameActive = true;
     document.getElementById('status').textContent = `${currentPlayer}'s turn`;
     renderBoard();
+    const lines = document.querySelectorAll('.winning-line');
+    lines.forEach(line => line.remove());
 }
 // Rendering voard DO NOT TOUCH
 function renderBoard() {
@@ -145,9 +147,59 @@ function checkWinner(player) {
         [0, 4, 8], [2, 4, 6]             // diagonals
     ];
 
-    return winPatterns.some(pattern =>
-        pattern.every(index => board[index] === player)
-    );
+    for (let i = 0; i < winPatterns.length; i++) {
+        const pattern = winPatterns[i];
+        if (pattern.every(index => board[index] === player)) {
+            if (i < 3) drawHorizontalLine(pattern[0]);
+            else if (i < 6) drawVerticalLine(pattern[0]);
+            else drawDiagonalLine(i === 6);
+            return true;
+        }
+    }
+    return false;
+}
+
+function drawHorizontalLine(firstIndex) {
+    const line = document.createElement('div');
+    line.className = 'winning-line horizontal';
+    const board = document.getElementById('board');
+    const cellSize = board.children[0].offsetWidth;
+    const gap = 5;
+    const row = Math.floor(firstIndex / 3);
+    
+    line.style.width = (cellSize * 3 + gap * 2) + 'px';
+    line.style.top = (row * (cellSize + gap) + cellSize / 2) + 'px';
+    line.style.left = '0';
+    board.appendChild(line);
+}
+
+function drawVerticalLine(firstIndex) {
+    const line = document.createElement('div');
+    line.className = 'winning-line vertical';
+    const board = document.getElementById('board');
+    const cellSize = board.children[0].offsetWidth;
+    const gap = 5;
+    const col = firstIndex % 3;
+    
+    line.style.height = (cellSize * 3 + gap * 2) + 'px';
+    line.style.left = (col * (cellSize + gap) + cellSize / 2 - 2.5) + 'px'; // Subtract half the line width
+    line.style.top = '0';
+    board.appendChild(line);
+}
+
+function drawDiagonalLine(isMainDiagonal) {
+    const line = document.createElement('div');
+    line.className = `winning-line diagonal ${isMainDiagonal ? 'main' : 'counter'}`;
+    const board = document.getElementById('board');
+    const cellSize = board.children[0].offsetWidth;
+    const gap = 5;
+    const length = Math.sqrt(2) * (cellSize * 3 + gap * 2);
+    
+    line.style.width = length + 'px';
+    line.style.top = '50%';
+    line.style.left = '50%';
+    line.style.transform = `translate(-50%, -50%) rotate(${isMainDiagonal ? 45 : -45}deg)`;
+    board.appendChild(line);
 }
 
 // For swapping game modes

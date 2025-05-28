@@ -225,6 +225,28 @@ h1 {
     background-color: #8a2be2;
 }
 
+.winning-line {
+    position: absolute;
+    background: #ff4444;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.winning-line.horizontal {
+    height: 5px;
+    transform: translate(408px,110px)
+}
+
+.winning-line.vertical {
+    width: 5px;
+    transform: translate(408px,110px);
+}
+
+.winning-line.diagonal {
+    height: 5px;
+    transform-origin: center;
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     #board {
